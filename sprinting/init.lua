@@ -6,6 +6,7 @@ playerstate.register_fields {
 
 playerstate.foreach_onstep(function(player, name)
   local state = playerstate.get(name)
+  if not state then return end
 
   local keys = player:get_player_control()
   state.timeSinceAux = state.timeSinceAux + 1

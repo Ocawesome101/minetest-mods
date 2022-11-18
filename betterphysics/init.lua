@@ -65,16 +65,18 @@ local function modify(n, a, v)
   end
 
   state[a] = v
+
+  return true
 end
 
 function api.attribute_base(name, attribute, value)
-  local name = attribute .. "_base"
-  return modify(name, value)
+  local aname = attribute .. "_base"
+  return modify(name, aname, value)
 end
 
 function api.attribute_modifier(name, attribute, value)
-  local name = attribute .. "_mod"
-  return modify(name, value)
+  local aname = attribute .. "_mod"
+  return modify(name, aname, value)
 end
 
 -- global api
